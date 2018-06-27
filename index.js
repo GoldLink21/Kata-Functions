@@ -3,7 +3,7 @@ function add(x1,x2){
 }
 
 function multiply(x1,x2){
-    var total=0;
+    var total=x1;
     if(x2<0&&x1<0)
         return multiply(-x1,-x2);
     
@@ -18,7 +18,6 @@ function multiply(x1,x2){
     for(let i=1;i<x2;i++){
         total = add(total,x1);
     }
-
     return total;
 }
 
@@ -36,12 +35,28 @@ function factorial(n){
 }
 
 function fibonacci(n){
-    if(n===0)
+    if(n<=1)
         return 0;
-    if(n===1)
-        return 0;
+        
     if(n===2)
         return 1;
     
     return add(fibonacci(add(n,-1)),fibonacci(add(n,-2)));
+}
+
+function fib(n){
+    var totals=[0,1];
+    for(let i=1;i<n;i++){
+        totals.push(add(totals[i],totals[i-1]))
+    }
+    return totals[add(n,-1)];
+}
+
+function fibArr(n){
+    var totals=[0,1];
+    for(let i=1;i<n;i++){
+        totals.push(totals[i]+totals[i-1])
+        
+    }
+    return totals;
 }
