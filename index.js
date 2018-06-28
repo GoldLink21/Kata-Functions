@@ -60,3 +60,16 @@ function fibArr(n){
     }
     return totals;
 }
+
+function text(title,text){
+    var p = document.createElement('p');
+    p.innerHTML = '<strong>'+title+'</strong><br>'+text;
+    document.body.appendChild(p);
+    console.log(title+': '+text);
+}
+
+text('Add funtion 2+4',add(2,4));
+text('Multiply function 6*8',multiply(6,8));
+text('Power 2^8',power(2,8));
+text('Factorial 4!',factorial(4));
+text('Fibonacci 8', fib(8));
